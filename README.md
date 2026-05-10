@@ -6,22 +6,6 @@ This is a monorepo containing both the backend and frontend components for the B
 
 ```
 brex-interview-playground/
-├── backend-kotlin/    # Kotlin Spring Boot Backend
-│   ├── src/
-│   │   └── main/
-│   │       ├── kotlin/
-│   │       │   └── brex/interview/
-│   │       │       ├── config/      # Application configuration
-│   │       │       ├── controller/  # REST controllers
-│   │       │       ├── graphql/     # GraphQL resolvers
-│   │       │       ├── model/       # Domain models
-│   │       │       ├── dto/         # Data transfer objects
-│   │       │       ├── repository/  # Data access layer
-│   │       │       └── service/     # Business logic
-│   │       └── resources/
-│   │           ├── graphql/         # GraphQL schema
-│   │           └── schema/          # Database schema
-│   └── test/                        # Test files
 ├── backend-python/   # Python FastAPI Backend (Alternative)
 │   ├── src/
 │   │   └── app/
@@ -44,18 +28,8 @@ brex-interview-playground/
     └── tests/               # Test files
 ```
 
-### Backend Options
 
-You can choose between two backend implementations:
-
-#### Kotlin Spring Boot Backend
-
-The Kotlin backend is a Spring Boot application that provides:
-- REST and GraphQL APIs for simple message operations
-- H2 in-memory database
-- Basic message CRUD functionality
-
-#### Python FastAPI Backend (Alternative)
+#### Python FastAPI Backend
 
 The Python backend is a FastAPI application that provides:
 - REST and GraphQL APIs for simple message operations
@@ -74,10 +48,6 @@ The frontend is built with the T3 Stack, featuring:
 
 ### Prerequisites
 
-For Kotlin backend:
-- JDK 11 or higher
-- Gradle (for building the project)
-
 For Python backend:
 - Python 3.8 or higher
 - Poetry (for dependency management)
@@ -90,25 +60,7 @@ For frontend:
 
 ### Running the Backend
 
-#### Option 1: Kotlin Backend
-
-1. **Build the Project**:
-   ```bash
-   cd backend-kotlin
-   ./gradlew build
-   ```
-
-2. **Run the Application**:
-   ```bash
-   ./gradlew bootRun --console=plain
-   ```
-
-3. **Access the Application**:
-   - REST API: `http://localhost:8080/api/`
-      - i.e. `http://localhost:8080/api/messages/latest`
-   - GraphQL API: `http://localhost:8080/graphql`
-
-#### Option 2: Python Backend
+#### Python Backend
 
 1. **Install Poetry** (if not already installed):
    ```bash
@@ -157,7 +109,6 @@ For frontend:
 
 #### Testing GraphQL
 - Access the GraphQL IDE:
-  - For Kotlin backend: `http://localhost:8080/graphiql`
   - For Python backend: `http://localhost:8080/graphql`
 
 - **Example Query**:
@@ -183,12 +134,6 @@ For frontend:
     ```
 
 ### Running Tests
-
-#### Kotlin Backend Tests:
-```bash
-cd backend-kotlin
-./gradlew test
-```
 
 #### Python Backend Tests:
 ```bash
